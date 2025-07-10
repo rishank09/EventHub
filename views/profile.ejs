@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheet/profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logout Button -->
+      <div class="logout-container">
+        <a href="/logout" class="logout-btn">🚪 Logout</a>
+      </div>
+
+      <!-- Welcome Block -->
+      <div class="welcome-section">
+        <div class="profile-image">
+          <img src="<%= user.image || '/images/Uploads/default.png' %>" alt="Profile" />
+        </div>
+        <div class="welcome-text">
+          <h1>Welcome, <span class="highlight">Admin..</span></h1>
+        </div>
+      </div>
+
+      <!-- Create Post Form -->
+      <form method="POST" action="/post" class="post-form">
+        <textarea
+          class="eventname"
+          name="eventname"
+          placeholder="Event Name"
+          required
+        ></textarea>
+        <textarea
+          name="content"
+          placeholder="Write all details about the event"
+          required
+        ></textarea>
+        <textarea
+          class="imageurl"
+          name="imageurl"
+          placeholder="Image URL"
+        ></textarea>
+        <input type="submit" value="Save Event" />
+      </form>
+
+      <!-- Events Section -->
+      <div class="posts-section">
+        <h2>Current Events!</h2>
+
+        <!-- Sample Event Post (Static Example) -->
+        <div class="post-list">
+          <div class="post-card">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Sample Event Banner">
+            <h2>AI & Robotics Workshop</h2>
+            <p>
+              Join us for a hands-on session exploring the fundamentals of Artificial Intelligence and Robotics. 
+              This event is open to all branches and will include interactive demonstrations, guest speakers, 
+              and networking opportunities. Don’t miss this chance to ignite your innovation!
+            </p>
+            <button>Register Now</button>
+           
+          </div>
+
+          <!-- Dynamic Posts -->
+          <% user.posts.reverse().forEach(function(post) { %>
+            <div class="post-card">
+              <img src="<%= post.imageurl %>" alt="Event Image">
+              <h2><%= post.eventname %></h2>
+              <p><%= post.content %></p>
+              <button>Register Now</button>
+              <div class="post-actions">
+                <% let isLiked = post.likes.includes(user._id.toString()); %>
+                <form action="/like/<%= post._id %>" method="get">
+                  <button type="submit" class="like-btn" data-liked="<%= isLiked %>">
+                    <i class="fa-heart <%= isLiked ? 'fas liked' : 'far' %>"></i>
+                  </button>
+                </form>
+                <a href="/edit/<%= post._id %>" class="edit-btn">Edit</a>
+                <a href="/delete/<%= post._id %>" class="delete-btn">Delete</a>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

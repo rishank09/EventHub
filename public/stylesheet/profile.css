@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(to bottom right, #1e293b, #0f172a);
+  color: white;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Logout */
+.logout-container {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 3px 12px rgba(239, 68, 68, 0.3);
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Welcome Section */
+.welcome-section {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #8b5cf6;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome-text h1 {
+  font-size: 2rem;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+/* Post Form */
+.post-form {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 50px;
+}
+
+.post-form textarea {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid #334155;
+  color: white;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.post-form .eventname {
+  font-weight: bold;
+  font-size: 1.1rem;
+  min-height: 40px;
+}
+
+.post-form .imageurl {
+  font-style: italic;
+}
+
+.post-form input[type="submit"] {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.post-form input[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+/* Posts Section */
+.posts-section {
+  margin-top: 20px;
+}
+
+.posts-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #f1f5f9;
+  text-align: center;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.post-card img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 2px solid #334155;
+}
+
+.post-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7dd3fc;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  color: #e2e8f0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.post-card button {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  transition: background 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.post-card button:hover {
+  background-color: #0284c7;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.like-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.like-btn .liked {
+  color: #f87171;
+}
+
+.edit-btn {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  text-decoration: underline;
+}
+
+.delete-btn {
+  color: #f87171;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

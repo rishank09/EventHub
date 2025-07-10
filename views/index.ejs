@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/stylesheet/register.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-box">
+        <h1>Create Your Account</h1>
+
+        <form action="/register" method="POST" class="form">
+          <input
+            type="text"
+            name="username"
+            placeholder="Create Username"
+            required
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="text"
+            name="age"
+            placeholder="DOB"
+            onfocus="this.type='date'"
+            onblur="this.type='text'"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            required
+          />
+          <button type="submit">Create Account</button>
+        </form>
+
+        <p class="footer-text">
+          Already have an account?
+          <a href="/login">Log in</a>
+           
+        </p>
+        <p>
+          <a href="/">Back to home</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
